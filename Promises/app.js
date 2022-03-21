@@ -48,4 +48,4 @@ let prom = new Promise((resolve, reject) => {
     console.log(rejectionReason);
   };
    
-  prom.then(handleSuccess, handleFailure);
+  prom.then(handleSuccess).catch(handleFailure);
