@@ -22,7 +22,7 @@ console.log(orderPromise);
 // ------------------------------------------------------------------------------------------ setTimeout()
 console.log("This is the first line of code in app.js.");
 const usingSTO = () => {
-  console.log('what');
+  console.log('Two seconds later :D');
 }
 
 setTimeout(usingSTO, 2000);
@@ -30,3 +30,22 @@ setTimeout(usingSTO, 2000);
 console.log("This is the last line of code in app.js.");
 
 // ------------------------------------------------------------------------------------------ then () / Success and Failure Callback Functions
+
+let prom = new Promise((resolve, reject) => {
+    let num = Math.random();
+    if (num < .5 ){
+      resolve('Yay!');
+    } else {
+      reject('Ohhh noooo!');
+    }
+  });
+   
+  const handleSuccess = (resolvedValue) => {
+    console.log(resolvedValue);
+  };
+   
+  const handleFailure = (rejectionReason) => {
+    console.log(rejectionReason);
+  };
+   
+  prom.then(handleSuccess, handleFailure);
