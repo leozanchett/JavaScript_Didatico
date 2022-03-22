@@ -28,11 +28,3 @@ checkInventory(order)
 
 
 
-checkInventory(order)
-    .then((resolvedValueArray) => {
-       return processPayment(resolvedValueArray);
-    }).then((resolvedValueArray) => {
-        return shipOrder(resolvedValueArray);
-    }).then((successMessage) => {
-        console.log(successMessage);
-    });
